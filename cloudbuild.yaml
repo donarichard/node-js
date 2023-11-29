@@ -6,6 +6,8 @@ steps:
     '-c', 
     'docker pull gcr.io/propane-country-406506/node-backend:latest || exit 0'
   ]
+  options:
+  logging: CLOUD_LOGGING_ONLY
 
 # Step 2: Build the Docker image with specified tags
 - name: 'gcr.io/cloud-builders/docker'
