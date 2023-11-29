@@ -12,10 +12,10 @@ spec:
   template:
     metadata:
       labels:
-        run: node-backend  # Labels applied to pods created by this Deployment
+        run: node-backend # Labels applied to pods created by this Deployment
     spec:
       containers:
-      - image: gcr.io/propane-country-406506/node-backend:latest  # Container image to use
-        name: node-backend  # Name of the container within the pod
-        ports:
-        - containerPort: 80  # Port on which the container listens
+        - image: gcr.io/propane-country-406506/node-backend:latest # Container image to use
+          name: node-backend # Name of the container within the pod
+          ports:
+            - containerPort: 80 # Port on which the container listens
