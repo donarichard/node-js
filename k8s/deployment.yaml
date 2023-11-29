@@ -5,17 +5,17 @@ metadata:
     run: node-backend
   name: node-backend
 spec:
-  replicas: 2
+  replicas: 2  # Number of desired replicas (pods)
   selector:
     matchLabels:
-      run: node-backend
+      run: node-backend  # Labels to match with pods controlled by this Deployment
   template:
     metadata:
       labels:
-        run: node-backend
+        run: node-backend  # Labels applied to pods created by this Deployment
     spec:
       containers:
-      - image: gcr.io/propane-country-406506/node-backend:latest
-        name: node-backend
+      - image: gcr.io/propane-country-406506/node-backend:latest  # Container image to use
+        name: node-backend  # Name of the container within the pod
         ports:
-        - containerPort: 80
+        - containerPort: 80  # Port on which the container listens

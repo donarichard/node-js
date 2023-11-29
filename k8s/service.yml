@@ -4,7 +4,7 @@ metadata:
   name: node-backend
 spec:
   selector:
-     run: node-backend
+    run: node-backend
   ports:
   - protocol: TCP
     port: 80
