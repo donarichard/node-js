@@ -22,7 +22,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'k8s/']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1'  # Note: Removed extra spaces
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
 
 # Step 4: Set the image for the Kubernetes deployment
@@ -30,11 +30,11 @@ steps:
   args: [
     'set', 
     'image', 
-    'deployment/node-backend',  # Specify the correct deployment name
+    'deployment/node-backend',  # Ensure this matches the correct deployment name
     'node-backend=gcr.io/propane-country-406506/node-backend:latest'
   ]
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1'  # Note: Removed extra spaces
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
 
 # Push images to Google Container Registry with tags
