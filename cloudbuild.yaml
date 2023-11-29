@@ -6,8 +6,6 @@ steps:
     '-c', 
     'docker pull gcr.io/propane-country-406506/node-backend:latest || exit 0'
   ]
-  options:
-  logging: CLOUD_LOGGING_ONLY
 
 # Step 2: Build the Docker image with specified tags
 - name: 'gcr.io/cloud-builders/docker'
@@ -19,8 +17,6 @@ steps:
     'gcr.io/propane-country-406506/node-backend:latest',
     '.'
   ]
-  options:
-  logging: CLOUD_LOGGING_ONLY
 
 # Step 3: Apply Kubernetes configuration
 - name: 'gcr.io/cloud-builders/kubectl'
@@ -28,8 +24,6 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
-  options:
-  logging: CLOUD_LOGGING_ONLY
 
 # Step 4: Set the image for the Kubernetes deployment
 - name: 'gcr.io/cloud-builders/kubectl'
