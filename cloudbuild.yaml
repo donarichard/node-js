@@ -4,7 +4,7 @@ steps:
   entrypoint: 'bash'
   args: [
     '-c', 
-    'docker pull gcr.io/propane-country-406506/node-backend:latest || exit 0'
+    'docker pull gcr.io/propane-country-406506/node-backend:latest'
   ]
   
 # Step 2: Build the Docker image with specified tags
@@ -36,7 +36,6 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-1'
-  - 'KUBE_NAMESPACE=default'
 
 # Push images to Google Container Registry with tags
 images: [
