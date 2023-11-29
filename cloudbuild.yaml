@@ -6,7 +6,7 @@ steps:
     '-c', 
     'docker pull gcr.io/propane-country-406506/node-backend:latest || exit 0'
   ]
-
+  
 # Step 2: Build the Docker image with specified tags
 - name: 'gcr.io/cloud-builders/docker'
   args: [
@@ -43,3 +43,7 @@ images: [
   'gcr.io/propane-country-406506/node-backend:latest',
   'gcr.io/propane-country-406506/node-backend:latest'
 ]
+
+logsBucket: 'gs://mylogs-1'
+options:
+  logging: 'GCS_ONLY'
