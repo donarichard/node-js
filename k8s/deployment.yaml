@@ -5,7 +5,7 @@ metadata:
     run: node-backend
   name: node-backend
 spec:
-  replicas: 3  # Number of desired replicas (pods)
+  replicas: 1  # Number of desired replicas (pods)
   selector:
     matchLabels:
       run: node-backend  # Labels to match with pods controlled by this Deployment
